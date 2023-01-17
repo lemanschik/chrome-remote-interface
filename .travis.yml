@@ -2,17 +2,17 @@ os: linux
 language: node_js
 jobs:
   include:
-    - node_js: "12"
     - node_js: "14"
     - node_js: "16"
+    - node_js: "18"
 cache:
   directories:
     - node_modules
-dist: trusty
+dist: focal
 addons:
   apt:
     packages:
-      - dpkg
+      - dpkg # XXX needed apparently...
   chrome: stable
 before_script:
   # dump the current versions
